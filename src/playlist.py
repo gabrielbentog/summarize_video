@@ -5,7 +5,7 @@ from summarize import summarize_text  # Função que você já criou para resumi
 from utils import parametrize_title
 import os
 
-url = "https://www.youtube.com/watch?v=jQMbuK6URws&list=PLHz_AreHm4dm24MhlWJYiR_Rm7TFtvs6S&index=1"
+url = input("Digite a URL da playlist: ")
 pl = Playlist(url)
 playlist_title = parametrize_title(pl.title)
 playlist_folder = f"temp/{playlist_title}"
