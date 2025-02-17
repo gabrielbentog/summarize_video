@@ -7,22 +7,35 @@ load_dotenv()
 def summarize_text(text, path):
   client = genai.Client(api_key=os.getenv("GEMINI_KEY"))
   response = client.models.generate_content(
-      model="gemini-2.0-flash",
-      contents=f"""
-  Gere um resumo detalhado e preciso do conteúdo do vídeo fornecido abaixo, em português do Brasil. O resumo deve ser organizado em Markdown (.md) e incluir títulos e, quando necessário, subtítulos, todos em português. Certifique-se de que o resumo explique claramente o que é dito no vídeo, abordando os pontos principais de forma minuciosa. Estruture o resumo nos tópicos a seguir:
+    model="gemini-2.0-flash",
+    contents=f"""
+    Contexto: Vou fornecer a transcrição de um vídeo. Sua tarefa é elaborar um resumo que não apenas destaque os pontos principais e as conclusões do vídeo, mas que também explique e esclareça os conceitos, ideias e argumentos apresentados. O objetivo é tornar o conteúdo mais acessível e compreensível para alguém que não assistiu ao vídeo.
 
-  1. **Contexto:** Descreva brevemente o cenário ou situação apresentada no vídeo.
-  2. **Objetivos/Propósito:** Explique o objetivo principal ou a finalidade do vídeo.
-  3. **Principais Pontos:** Liste, de forma organizada e em tópicos, os argumentos, ideias e fatos centrais mencionados no vídeo. Caso algum ponto necessite de mais explicação, utilize subtópicos para detalhá-lo.
-  4. **Detalhes Relevantes:** Destaque informações, exemplos e dados que reforcem os pontos principais.
-  5. **Conclusão:** Resuma a mensagem final, os resultados ou as implicações extraídas do vídeo.
-  6. **Recomendações/Implicações (quando aplicável):** Indique sugestões ou ações recomendadas, conforme mencionado no vídeo.
+    Instruções de Formatação e Conteúdo:
 
-  Incorpore somente as informações solicitadas acima, sem incluir comentários ou informações adicionais.
+    1. Estrutura:
+        - Inclua uma breve introdução para contextualizar o assunto.
+        - Resuma os principais tópicos e ideias centrais do vídeo em um corpo de texto bem organizado (use subtítulos ou bullet points, se necessário).
+        - Em cada tópico, não apenas resuma o que foi dito, mas também explique os conceitos e argumentos apresentados, detalhando o "como" e o "porquê" para facilitar a compreensão.
+        - Finalize com uma conclusão ou insight final que resuma os aprendizados e implicações do vídeo.
 
-  Texto:
-  {text}
-  """
+    2. Clareza e Objetividade:
+        - Utilize linguagem simples e direta.
+        - Evite repetições, ruídos de fala e detalhes irrelevantes.
+
+    3. Destaques Importantes:
+        - Saliente quaisquer inovações, exemplos práticos, benefícios e desafios mencionados.
+        - Inclua, se necessário, implicações ou recomendações destacadas no vídeo.
+
+    4. Tamanho do Resumo:
+        - Mantenha o texto em um tamanho razoável, suficiente para transmitir o essencial sem se estender em demasia.
+
+    5. Fidelidade:
+        - Garanta que o resumo seja fiel ao que foi dito no vídeo, sem adicionar informações não contidas na transcrição.
+
+    Transcrição do Vídeo:
+    {text}
+        """
   )
   print(response.text)
 
