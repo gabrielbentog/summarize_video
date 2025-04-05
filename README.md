@@ -37,7 +37,7 @@ Este projeto permite baixar o áudio de vídeos do YouTube (ou playlists inteira
 
   Caso o arquivo `requirements.txt` não esteja disponível, instale manualmente:
 
-  pip install pytubefix whisper torch python-dotenv google
+  pip install pytubefix torch python-dotenv google-generativeai faster-whisper
 - **
 ### 🔑 Configuração da API do Google GenAI
 Crie um arquivo `.env` na raiz do projeto e adicione sua chave de API:

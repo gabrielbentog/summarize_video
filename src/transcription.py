@@ -13,11 +13,11 @@ def transcribe_audio(audio_path):
             return f.read()
 
     # Define o dispositivo: "cuda" se houver GPU, senão "cpu"
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cpu"
     # Escolhe o tipo de computação: FP16 na GPU para otimizar e INT8 na CPU
-    compute_type = "float16" if device == "cuda" else "int8"
+    compute_type = "int8"
 
-    model = WhisperModel("large-v2", device=device, compute_type=compute_type)
+    model = WhisperModel("large-v3", device=device, compute_type=compute_type)
     
     # Inicia o timer
     start_time = time.time()
