@@ -7,7 +7,7 @@ Este projeto permite baixar o áudio de vídeos do YouTube (ou playlists inteira
 ## ✨ Funcionalidades
 
 - 🎧 **Download de Áudio:** Baixa o áudio de vídeos individuais ou de playlists inteiras.
-- 📝 **Transcrição Automática:** Converte o áudio em texto usando o **Whisper**.
+- 📝 **Transcrição Automática:** Converte o áudio em texto usando o **Fast-Whisper**.
 - 📑 **Geração de Resumos:** Cria um resumo detalhado em Markdown com os seguintes tópicos:
   - **📌 Contexto:** Descrição breve do cenário apresentado no vídeo.
   - **🎯 Objetivos/Propósito:** O que o vídeo pretende abordar ou alcançar.
@@ -23,13 +23,6 @@ Este projeto permite baixar o áudio de vídeos do YouTube (ou playlists inteira
 
 ### 📌 Requisitos do Sistema
 - **Python 3.7+**
-- **FFmpeg:** Necessário para processar e converter áudio/vídeo.
-  - No Windows: Baixe e instale o FFmpeg através do site oficial: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)  
-  - No Linux/macOS: Instale via gerenciador de pacotes:  
-
-    - **Ubuntu/Debian:** `sudo apt install ffmpeg`
-    - **MacOS (Homebrew):** `brew install ffmpeg`
-    - **Windows (Chocolatey):** `choco install ffmpeg`
 - **Bibliotecas Python:**  
   Instale as dependências com o comando:
 
